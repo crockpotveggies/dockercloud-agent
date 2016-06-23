@@ -28,6 +28,8 @@ Usage of ./dockercloud-agent:
     	ngrok host for NAT tunneling
   -skip-nat-tunnel
     	Skip NAT tunnel
+  -require-nat-tunnel
+      Force requirement of NAT tunnel (non-standalone)
   -standalone
     	Standalone mode, skipping reg with Docker Cloud
   -stdout

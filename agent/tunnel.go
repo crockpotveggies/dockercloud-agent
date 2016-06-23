@@ -27,11 +27,15 @@ type ReachableForm struct {
 
 func NatTunnel(url, ngrokHome, ngrokLogPath, ngrokConfPath, uuid string) {
 	ngrokPath := path.Join(ngrokHome, NgrokBinaryName)
-	if isNodeReachable(url, uuid) {
-		Logger.Printf("Node %s is publicly reachable", Conf.CertCommonName)
-		return
+	if *FlagReqNatTunnel {
+		Logger.Printf("Node assumed NOT publicly reachable, requiring NAT", Conf.CertCommonName)
 	} else {
-		Logger.Printf("Node %s is NOT publicly reachable", Conf.CertCommonName)
+		if isNodeReachable(url, uuid) {
+			Logger.Printf("Node %s is publicly reachable", Conf.CertCommonName)
+			return
+		} else {
+			Logger.Printf("Node %s is NOT publicly reachable", Conf.CertCommonName)
+		}
 	}
 
 	DownloadNgrok(NgrokTarURL, ngrokHome)

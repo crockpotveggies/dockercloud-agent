@@ -27,6 +27,7 @@ func ParseFlag() {
 	FlagLogToStdout = flag.Bool("stdout", false, "Print log to stdout")
 	FlagStandalone = flag.Bool("standalone", false, "Standalone mode, skipping reg with Docker Cloud")
 	FlagSkipNatTunnel = flag.Bool("skip-nat-tunnel", false, "Skip NAT tunnel")
+	FlagReqNatTunnel = flag.Bool("require-nat-tunnel", false, "Force requirement of NAT tunnel")
 	FlagDockerHost = flag.String("docker-host", "", "Override 'DockerHost'")
 	FlagDockerOpts = flag.String("docker-opts", "", "Add additional flags to run docker daemon")
 	FlagHost = flag.String("host", "", "Override 'Host' in the configuration file")

@@ -10,6 +10,7 @@ var (
 	FlagLogToStdout   *bool
 	FlagStandalone    *bool
 	FlagSkipNatTunnel *bool
+	FlagReqNatTunnel  *bool
 	FlagDockerHost    *string
 	FlagDockerOpts    *string
 	FlagHost          *string
